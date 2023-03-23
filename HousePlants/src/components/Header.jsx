@@ -3,10 +3,11 @@ import React from 'react';
 import { AppBar, Avatar, Toolbar, Typography, IconButton, Menu, MenuItem, Button, Box, Container, Tooltip, useRadioGroup } from '@mui/material';
 import { Menu as MenuIcon, Adb as AdbIcon } from '@mui/icons-material';
 
-const pages = ['Home', 'About', 'Contact'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import {COLORS, FONTS} from '../constants';
 
-const Header = () =>{
+const pages = [ 'My Plants', 'Add New' , 'Log Out'];
+
+const Header = ({ user, setUser, actualPage, setActualPage }) =>{
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
   
@@ -17,14 +18,23 @@ const Header = () =>{
       setAnchorElUser(event.currentTarget);
     };
   
-    const handleCloseNavMenu = () => {
-      setAnchorElNav(null);
+    const handleCloseNavMenu = (e) => {
+        console.log('e.value: '  +e.target.innerText);
+        switch (e.target.innerText) {
+            case 'MY PLANTS':
+                setActualPage('My Plants');
+                break;
+            case 'ADD NEW':
+                setActualPage('Add New');
+                break;
+            case 'LOG OUT':
+                setUser(null);
+                break;
+            default:
+                break;
+        }
+        setAnchorElNav(null);
     };
-  
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-    };
-
 
     return (
         <AppBar position="static" sx={{padding:'0'}}>
@@ -46,7 +56,7 @@ const Header = () =>{
                         textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        {user}'s Plants
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -85,6 +95,7 @@ const Header = () =>{
                         ))}
                         </Menu>
                     </Box>
+                    
                     <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
                         variant="h5"
@@ -102,7 +113,7 @@ const Header = () =>{
                         textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                       {user}'s Plants
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (

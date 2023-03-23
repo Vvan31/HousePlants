@@ -6,8 +6,9 @@ import Login from './pages/Login'
 
 function App() {
   const [user, setUser] = useState(null)
+  const [userPosts, setUserPosts] = useState([])
   const [posts, setPosts] = useState([])
-
+  
   const handleAddPost = (newPost) => {
     setPosts([newPost, ...posts])
   }
@@ -15,6 +16,7 @@ function App() {
   useEffect(() => {
     document.title = user ? `${user}'s House Plants` : 'Please Login'
   }, [user])
+
   
   return user ? (
      <Main
@@ -23,6 +25,8 @@ function App() {
       handleAddPost={handleAddPost}
       posts={posts}
       setPosts={setPosts}
+      userPosts={userPosts}
+      setUserPosts={setUserPosts}
     />
   ): <Login setUser={setUser} />
 }

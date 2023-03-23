@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PostList = () =>{
+const PostList = ({posts, userPosts, actualPage}) =>{
     return (
-        <h1>Hello</h1>
+        <h1>PostList</h1>
     )
 };
 

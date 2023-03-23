@@ -2,7 +2,7 @@ import React from 'react';
 
 const MyPlants = () =>{
     return (
-        <h1>Hello</h1>
+        <h1>My plants</h1>
     )
 };
 
