@@ -19,7 +19,6 @@ const Header = ({ user, setUser, actualPage, setActualPage }) =>{
     };
   
     const handleCloseNavMenu = (e) => {
-        console.log('e.value: '  +e.target.innerText);
         switch (e.target.innerText) {
             case 'MY PLANTS':
                 setActualPage('My Plants');
@@ -128,7 +127,7 @@ const Header = ({ user, setUser, actualPage, setActualPage }) =>{
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-                        <Avatar alt="R" src=".././assets/viviana.png" />
+                        <Avatar alt="R" src="@/assets/viviana.png" />
                     </Box>
                 </Toolbar>
             </Container> 
