@@ -16,7 +16,7 @@ import {
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import CloseIcon from '@mui/icons-material/Close';
 
-import key from '@/key';
+import {configKeys} from '@/config/index.js';
 
 const CreateCard = ({user, posts, userPosts, setUserPosts, handleAddPost, handleSearch}) =>{
 
@@ -26,7 +26,8 @@ const CreateCard = ({user, posts, userPosts, setUserPosts, handleAddPost, handle
     const [alert, setAlert] = React.useState(false);
 
     const fetchData = async () => {
-      const APIresult = await fetch('https://perenual.com/api/species-list?key='+key+'q='+ content)
+      console.log(configKeys);
+      const APIresult = await fetch('https://perenual.com/api/species-list?key='+ configKeys.Key +'&q='+ content)
       APIresult.json().then(json => {
       setResult(json.data);
       handleSearch(json.data);
