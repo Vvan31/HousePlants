@@ -26,15 +26,19 @@ const CreateCard = ({user, posts, userPosts, setUserPosts, handleAddPost, handle
     const [alert, setAlert] = React.useState(false);
 
     const fetchData = async () => {
-      console.log(configKeys);
-      const APIresult = await fetch('https://perenual.com/api/species-list?key='+ configKeys.Key +'&q='+ content)
-      APIresult.json().then(json => {
-      setResult(json.data);
-      handleSearch(json.data);
-      })
-      if (result.length === 0){
+      try {
+        const APIresult = await fetch('https://perenual.com/api/species-list?key='+ configKeys.Key +'&q='+ content)
+        APIresult.json().then(json => {
+        setResult(json.data);
+        handleSearch(json.data);
+        })
+        if (result.length === 0){
+          setAlert(true);
+          handleSearch(null);
+          setResult(null);
+        }
+      } catch (error) {
         setAlert(true);
-        handleSearch(null);
       }
     }
 
@@ -91,6 +95,7 @@ const CreateCard = ({user, posts, userPosts, setUserPosts, handleAddPost, handle
             size="small"
             onClick={() => {
               setAlert(false);
+              setResult(null);
               handleSearch(null);
             }}
           >
