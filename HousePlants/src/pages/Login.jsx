@@ -71,23 +71,6 @@ const Login = ({ setUser }) => {
                     </ListItem>
                 </form>
             </List>
-
-        
-
-
-
-
-
-               {/*  <Typography>Login</Typography>
-                <form onSubmit={handleSubmit}>
-                <TextField id="outlined-basic" label="Outlined" variant="outlined" onChange={e => setUsername(e.target.value)} />
-                    {/* <Input
-                        type="text"
-                        placeholder='Input username'
-                        onChange={e => setUsername(e.target.value)}
-                    /> }
-                    <Button type='submit'>Login</Button>
-                </form> */}
           
         </Container>
     )

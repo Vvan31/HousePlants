@@ -9,7 +9,7 @@ function App() {
   const [userPosts, setUserPosts] = useState([])
   const [posts, setPosts] = useState([])
   const [search, setSearch] = useState(null)
-
+  const [image, setImage] = useState("src/assets/plant1.png")
 
   const handleAddPost = (newPost) => {
     setPosts([newPost, ...posts])
@@ -19,6 +19,9 @@ function App() {
   }
   const handleSearch = (Newsearch) => {
     setSearch(Newsearch)
+  }
+  const handleSetImage = (NewImage) => {
+    setImage(NewImage)
   }
 
   useEffect(() => {
@@ -38,6 +41,8 @@ function App() {
       setUserPosts={setUserPosts}
       search={search}
       handleSearch={handleSearch} 
+      image={image}
+      handleSetImage={handleSetImage}
     />
   ): <Login setUser={setUser} />
 }

@@ -5,8 +5,9 @@ import {
 } from '@mui/material';
 import Logout from '@mui/icons-material/Logout';
 
-const AccountMenu = () => {
+const AccountMenu = ({user, setUser, setActualPage, image}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -26,7 +27,7 @@ const AccountMenu = () => {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+            <Avatar sx={{ width: 32, height: 32 }} src={image}></Avatar>
           </IconButton>
         </Tooltip>
       </Box>
@@ -66,10 +67,11 @@ const AccountMenu = () => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
     
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
+        <MenuItem onClick={() => setActualPage('My Account')}>
+          <Avatar src={image} /> My account
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+
+        <MenuItem onClick={() => setUser(null)}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

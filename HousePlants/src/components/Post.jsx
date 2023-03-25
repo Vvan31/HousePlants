@@ -11,9 +11,7 @@ import {
   Typography,
   List, 
   ListItem,
-  ListItemText,
-  ListItemAvatar,
-  Avatar,
+  ListItemText
 } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -96,12 +94,6 @@ const Post = ({post, userPosts, handleAddUserPost, setUserPosts, actualPage}) =>
                   />
                 </ListItem>
             </List>
-            {/*   <Typography sx={{ p: 2 }}>
-                Sunlight: {post.sunlight}
-                Watering: {post.watering}
-                Other names: {post.other_name?post.other_name:"None"}
-                Cycle: {post.cycle}
-                </Typography> */}
             </Popover>
             </>
         )

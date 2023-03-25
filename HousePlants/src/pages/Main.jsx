@@ -6,6 +6,7 @@ import CreateCard from '@/pages/CreateCard'
 import Header from '@/components/Header'
 import PostList from '@/components/PostList'
 import MyPlants from '@/pages/MyPlants'
+import MyAccount from '@/pages/MyAccount'
 import Data from '@/data.json'
 
 import {Container, Box} from '@mui/material';
@@ -17,7 +18,8 @@ const Main =
   handleAddUserPost, 
   posts, setPosts, 
   userPosts, setUserPosts, 
-  search, handleSearch 
+  search, handleSearch,
+  image, handleSetImage 
 }) => {
   const [actualPage, setActualPage] = React.useState('My Plants');
 
@@ -55,8 +57,10 @@ const Main =
           </>
         )
         break;
-      case 'Log Out':
-        setUser(null);
+      case 'My Account':
+        return (
+          <MyAccount user={user} image={image} handleSetImage={handleSetImage} />
+        )
         break;
       default:
         break;
@@ -85,7 +89,7 @@ const Main =
     <>
       <Container sx={{ height: '100vh', width: '100vw', overflow:'hidden', padding:'0'}}> 
         <Box sx={{ overflow:'hidden', padding:'0' }}>
-          <Header user={user} setUser={setUser} actualPage={actualPage} setActualPage={setActualPage} sx={{ width:'100%', padding:'0'}} />
+          <Header user={user} setUser={setUser} actualPage={actualPage} setActualPage={setActualPage} image={image} sx={{ width:'100%', padding:'0'}} />
           {renderSwitch()}
         </Box>
       </Container>

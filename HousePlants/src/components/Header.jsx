@@ -6,9 +6,9 @@ import { Menu as MenuIcon, Adb as AdbIcon } from '@mui/icons-material';
 
 import {COLORS, FONTS} from '../constants';
 
-const pages = [ 'My Plants', 'Add New' , 'Log Out'];
+const pages = ['Add New'];
 
-const Header = ({ user, setUser, actualPage, setActualPage }) =>{
+const Header = ({ user, setUser, actualPage, setActualPage, image }) =>{
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
   
@@ -44,13 +44,14 @@ const Header = ({ user, setUser, actualPage, setActualPage }) =>{
                     <Typography
                         variant="h6"
                         noWrap
-                        component="a"
-                        href="/"
+                        component="button"
+                        onClick={() => setActualPage('My Plants')}
                         sx={{
                         mr: 2,
                         display: { xs: 'none', md: 'flex' },
                         fontFamily: 'monospace',
                         fontWeight: 700,
+                        backgroundColor: 'transparent',
                         letterSpacing: '.3rem',
                         color: 'inherit',
                         textDecoration: 'none',
@@ -129,7 +130,7 @@ const Header = ({ user, setUser, actualPage, setActualPage }) =>{
 
                     <Box sx={{ flexGrow: 0 }}>
                         {/* <Avatar alt="R" src="/src/assets/viviana.png" /> */}
-                            <AccountMenu />
+                            <AccountMenu user={user} setUser={setUser} setActualPage={setActualPage} image={image} />
                     </Box>
                 </Toolbar>
             </Container> 
