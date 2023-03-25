@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import Main from './pages/Main'
 import Login from './pages/Login'
+import { Container } from '@mui/material'
 // import './App.css'
 
 function App() {
@@ -30,21 +31,26 @@ function App() {
 
   
   return user ? (
-     <Main
-      user={user}
-      setUser={setUser}
-      handleAddPost={handleAddPost}
-      handleAddUserPost={handleAddUserPost}
-      posts={posts}
-      setPosts={setPosts}
-      userPosts={userPosts}
-      setUserPosts={setUserPosts}
-      search={search}
-      handleSearch={handleSearch} 
-      image={image}
-      handleSetImage={handleSetImage}
-    />
-  ): <Login setUser={setUser} />
+    <Container sx={{width:'100vw', padding:'0', margin:'0'}}>
+      <Main
+        user={user}
+        setUser={setUser}
+        handleAddPost={handleAddPost}
+        handleAddUserPost={handleAddUserPost}
+        posts={posts}
+        setPosts={setPosts}
+        userPosts={userPosts}
+        setUserPosts={setUserPosts}
+        search={search}
+        handleSearch={handleSearch} 
+        image={image}
+        handleSetImage={handleSetImage}
+      />
+    </Container>
+  ): 
+  <Container sx={{width:'100vw'}}>
+    <Login setUser={setUser} />
+  </Container>
 }
 
 export default App
