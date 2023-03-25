@@ -9,7 +9,7 @@ function App() {
   const [userPosts, setUserPosts] = useState([])
   const [posts, setPosts] = useState([])
   const [search, setSearch] = useState(null)
-  const [image, setImage] = useState("src/assets/plant1.png")
+  const [image, setImage] = useState("https://static.vecteezy.com/system/resources/thumbnails/008/482/601/small_2x/hand-drawn-flat-house-plants-in-the-potted-plants-illustration-isolated-on-white-background-free-vector.jpg")
 
   const handleAddPost = (newPost) => {
     setPosts([newPost, ...posts])
