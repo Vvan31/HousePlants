@@ -1,4 +1,5 @@
 import React from 'react';
+import AccountMenu from '@/components/AccountMenu';
 
 import { AppBar, Avatar, Toolbar, Typography, IconButton, Menu, MenuItem, Button, Box, Container, Tooltip, useRadioGroup } from '@mui/material';
 import { Menu as MenuIcon, Adb as AdbIcon } from '@mui/icons-material';
@@ -127,7 +128,8 @@ const Header = ({ user, setUser, actualPage, setActualPage }) =>{
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-                        <Avatar alt="R" src="@/assets/viviana.png" />
+                        {/* <Avatar alt="R" src="/src/assets/viviana.png" /> */}
+                            <AccountMenu />
                     </Box>
                 </Toolbar>
             </Container> 

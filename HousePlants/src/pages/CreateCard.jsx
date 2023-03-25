@@ -7,41 +7,57 @@ import {
     TextField,
     IconButton,
     Button,
+    Collapse,
+    Alert,
+    Backdrop,
+    CircularProgress
     
 } from '@mui/material';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+import CloseIcon from '@mui/icons-material/Close';
 
-import PostList from '@/components/PostList'
-
-
-const CreateCard = ({user, posts, userPosts, setUserPosts, handleAddPost, setSearch}) =>{
+const CreateCard = ({user, posts, userPosts, setUserPosts, handleAddPost, handleSearch}) =>{
 
     const [content, setContent] = React.useState('');
-    const imageInputRef = React.useRef()
-    const [image, setImage] = React.useState(null);
+    const [loading, setLoading] = React.useState(false);
+    const [result, setResult] = React.useState(null);
+    const [alert, setAlert] = React.useState(false);
+
+    const fetchData = async () => {
+      const APIresult = await fetch(''+ content)
+      APIresult.json().then(json => {
+      setResult(json.data);
+      handleSearch(json.data);
+      })
+      if (result.length === 0){
+        setAlert(true);
+        handleSearch(null);
+      }
+    }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        setSearch(content);
+      e.preventDefault();
+      if(!content){
+        handleSearch(null);
+      }else{
+        setLoading(true);
+        fetchData();
         setContent('');
+        setLoading(false);
+      }
     }
+
     return (
         <>
-      <Typography variant="h3" component="h2" gutterBottom sx={
-        {
-          textAlign: 'center'
-        }
-      }>
-        Create New Post
-      </Typography>
       <form id="newPost" onSubmit={handleSubmit}>
         <Box sx={{ 
           flexGrow: 1,
           display: 'flex',
           alignContent: 'center',
-          justifyContent:'center' }}>
+          justifyContent:'center' ,
+          paddingTop: '10px'}}>
           <Grid container spacing={2}>
-            <Grid item xs={5}>
+            <Grid item xs={9}>
               <TextField 
                   id="outlined-basic" 
                   label="Add Post Content" 
@@ -51,28 +67,42 @@ const CreateCard = ({user, posts, userPosts, setUserPosts, handleAddPost, setSea
                   sx={{height: '50px !important', width: '100%' }}  />
             </Grid>
             <Grid item xs={3}>
-            <IconButton color="primary" aria-label="upload picture" component="label">
-              <input hidden accept="image/*" type="file" onChange={(e) => setImage(e.target.files[0])} ref={imageInputRef} />
-              <AddPhotoAlternateIcon />
-            </IconButton>
-
-             {/*  <input type="file" onChange={(e) => setImage(e.target.files[0])} ref={imageInputRef} /> */}
-            </Grid>
-            <Grid item xs={4}>
-              {/* <button type="submit">Submit Post</button> */}
               <Button 
                 type="submit" 
                 variant="contained"
-                /* component="label" */
-                >
-                Upload Image
+                sx={{marginTop:'3px',height:'100%', width:'100%'}}>
+                Search
               </Button> 
             </Grid>
           </Grid>
         </Box>
       </form>
-        </>
-        
+      <Collapse in={alert}>
+      <Alert
+        severity="error" 
+        sx={{ width: '60%', margin: 'auto', marginTop: '50px' }}
+        action={
+          <IconButton
+            aria-label="close"
+            color="inherit"
+            size="small"
+            onClick={() => {
+              setAlert(false);
+              handleSearch(null);
+            }}
+          >
+            <CloseIcon fontSize="inherit" />
+          </IconButton>
+        }>No plants found!
+      </Alert>
+      </Collapse>
+      <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={loading}
+      >
+      <CircularProgress color="inherit" />
+      </Backdrop>
+      </>
     )
 };
 

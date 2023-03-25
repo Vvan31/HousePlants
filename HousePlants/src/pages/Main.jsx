@@ -10,7 +10,15 @@ import Data from '@/data.json'
 
 import {Container, Box} from '@mui/material';
 
-const Main = ({ user, setUser, handleAddPost, handleAddUserPost, posts, setPosts, userPosts, setUserPosts, setSearch}) => {
+const Main = 
+({ 
+  user, setUser, 
+  handleAddPost, 
+  handleAddUserPost, 
+  posts, setPosts, 
+  userPosts, setUserPosts, 
+  search, handleSearch 
+}) => {
   const [actualPage, setActualPage] = React.useState('My Plants');
 
   const renderSwitch = () => {
@@ -19,8 +27,13 @@ const Main = ({ user, setUser, handleAddPost, handleAddUserPost, posts, setPosts
         return(
           <>
             <MyPlants user={user} handleAddPost={handleAddPost} userPosts={userPosts} />
-            <Box sx={{ marginTop:'5%', height: '100vh', width: '90vw' }}>
-                <PostList posts={posts} userPosts={userPosts} setUserPosts={setUserPosts} handleAddUserPost={handleAddUserPost}  actualPage={actualPage} />
+            <Box sx={{ marginTop:'5%', height: '100vh', width: '100%' }}>
+                <PostList 
+                posts={posts} 
+                userPosts={userPosts} 
+                setUserPosts={setUserPosts} 
+                handleAddUserPost={handleAddUserPost}  
+                actualPage={actualPage}/>
             </Box>
           </>
         ) 
@@ -28,9 +41,16 @@ const Main = ({ user, setUser, handleAddPost, handleAddUserPost, posts, setPosts
       case 'Add New':
         return (
           <>
-            <CreateCard user={user} posts={posts} userPosts={userPosts} setUserPosts={setUserPosts} handleAddPost={handleAddPost} setSearch={setSearch}/>
-            <Box sx={{ marginTop:'5%', height: '100vh', width: '90vw' }}>
-                <PostList posts={posts} userPosts={userPosts} setUserPosts={setUserPosts} handleAddUserPost={handleAddUserPost}  actualPage={actualPage} />
+            <CreateCard user={user} posts={posts} userPosts={userPosts} setUserPosts={setUserPosts} handleAddPost={handleAddPost} handleSearch={handleSearch}/>
+            <Box sx={{ marginTop:'5%', height: '100vh', width: '100%' }}>
+                <PostList 
+                posts={posts} 
+                userPosts={userPosts} 
+                setUserPosts={setUserPosts} 
+                handleAddUserPost={handleAddUserPost}  
+                actualPage={actualPage}
+                search={search}
+                />
             </Box>
           </>
         )
@@ -43,6 +63,8 @@ const Main = ({ user, setUser, handleAddPost, handleAddUserPost, posts, setPosts
     }
   }
 
+
+
   const gatherData = () => {
     setPosts(Data.data);
   }
@@ -50,6 +72,12 @@ const Main = ({ user, setUser, handleAddPost, handleAddUserPost, posts, setPosts
   useEffect(() => {
     gatherData();
 
+      const options = {
+        method: 'GET',
+       
+        
+    };
+    
 }, []);
 
 

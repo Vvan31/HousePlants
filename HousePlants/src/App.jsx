@@ -8,7 +8,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [userPosts, setUserPosts] = useState([])
   const [posts, setPosts] = useState([])
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState(null)
 
 
   const handleAddPost = (newPost) => {
@@ -16,6 +16,9 @@ function App() {
   }
   const handleAddUserPost = (newPost) => {
     setUserPosts([newPost, ...userPosts])
+  }
+  const handleSearch = (Newsearch) => {
+    setSearch(Newsearch)
   }
 
   useEffect(() => {
@@ -33,7 +36,8 @@ function App() {
       setPosts={setPosts}
       userPosts={userPosts}
       setUserPosts={setUserPosts}
-      setSearch={setSearch}
+      search={search}
+      handleSearch={handleSearch} 
     />
   ): <Login setUser={setUser} />
 }
