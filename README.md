@@ -1,15 +1,3 @@
-# HousePlants
-React web app for keeping track of your house plants. 
-
-Vite  v4.2.1
-Node 
-React ^18.2.0
-
-Design:
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.11.14",
-
 <a name="readme-top"></a>
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -51,7 +39,6 @@ Design:
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#features">Built With</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -76,18 +63,10 @@ Design:
 <!-- ABOUT THE PROJECT -->
 ## About the project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/Vvan31/HousePlants/blob/main/HousePlants/src/assets/WhatsApp%20Image%202023-04-01%20at%2010.32.45%20PM.jpeg?raw=true)
+Developed using React and Material UI for a modern and user-friendly desig
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Features
-
-* Search an API for a specific house plant and view detailed information about it
-* Save plants to your profile and keep track of them
-* Add notes and photos to your saved plants to personalize your profile
-* View a calendar that displays upcoming watering and fertilizing schedules for your plants
-* Customizable profile that displays your saved plants and notes
-* Developed using React and Material UI for a modern and user-friendly desig
 
 ### Built With
 
@@ -101,20 +80,28 @@ Design:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This application is already deployed and ready to use here. (The API key access will change in the near future).
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+If you want to download the project and run it locally follow the next steps (make sure you're on the right directory with the src folder):
 * npm
   ```sh
-  npm install npm@latest -g
+  npm install
   ```
+  * mui
+  ```sh
+  npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+  ```
+  * To run Vite environment
+  ```sh
+  npm run dev
+  ```
+  
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at [https://perenual.com/docs/api](https://perenual.com/docs/api)
 2. Clone the repo
    ```sh
    git clone https://github.com/Vvan31/HousePlants.git
@@ -130,8 +117,6 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -142,14 +127,16 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- ROADMAP -->
 ## Roadmap 
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [x] Search an API for a specific house plant and view detailed information about it
+- [x] Save plants to your profile and keep track of them
+    - [ ] Add notes and photos to your saved plants to personalize your profile
+- [ ] View a calendar that displays upcoming watering and fertilizing schedules for your plants
+- [ ] Customizable profile name and profile photo
+- [ ] Share your plats list
+- [ ] Export others plants list into your profile
 
 See the [open issues](https://github.com/Vvan31/HousePlants/issues) for a full list of proposed features (and known issues).
 
@@ -187,12 +174,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@iamvvan_](https://twitter.com/iamvvan_) - v31.osorio@gmail.com
+Vivian Osorio - [@iamvvan_](https://twitter.com/iamvvan_) - v31.osorio@gmail.com
 
 Project Link: [https://github.com/Vvan31/HousePlants](https://github.com/Vvan31/HousePlants)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- ACKNOWLEDGMENTS -->
@@ -203,7 +189,6 @@ Project Link: [https://github.com/Vvan31/HousePlants](https://github.com/Vvan31/
 * []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
