@@ -83,7 +83,7 @@ Developed using React and Material UI for a modern and user-friendly desig
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This application is already deployed and ready to use here. (The API key access will change in the near future).
+This application is already deployed and ready to use <a href="https://perenual.com/docs/api">here</a>. (The API key access will change in the near future).
 
 ### Prerequisites
 
@@ -187,9 +187,7 @@ Project Link: [https://github.com/Vvan31/HousePlants](https://github.com/Vvan31/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Perenual plants API](https://perenual.com/docs/api)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
