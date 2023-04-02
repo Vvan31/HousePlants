@@ -29,7 +29,7 @@ Design:
 <h3 align="center">House Plants</h3>
 
   <p align="center">
-    project_description
+   "House Plants" is a web application that lets you search an API for a specific house plant and provides you with all the necessary information. With "House Plants", you can keep track of all your house plants and customize your profile to manage them better.
     <br />
     <a href="https://github.com/Vvan31/HousePlants"><strong>Explore the docs »</strong></a>
     <br />
@@ -51,6 +51,7 @@ Design:
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#features">Built With</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -73,30 +74,29 @@ Design:
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About the project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `Vvan31`, `HousePlants`, `iamvvan_`, `vivianos`, `gmail`, `v31.osorio`, `House Plants`, `project_description`
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Features
 
+* Search an API for a specific house plant and view detailed information about it
+* Save plants to your profile and keep track of them
+* Add notes and photos to your saved plants to personalize your profile
+* View a calendar that displays upcoming watering and fertilizing schedules for your plants
+* Customizable profile that displays your saved plants and notes
+* Developed using React and Material UI for a modern and user-friendly desig
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
+* [![Vite][Vite.com]][Vite-url]
+* [![Mui][mui.com]][mui-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -237,3 +237,7 @@ Project Link: [https://github.com/Vvan31/HousePlants](https://github.com/Vvan31/
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+[Vite.com]: https://img.shields.io/badge/Vite-v4.2.1-563D7C?style=for-the-badge&logo=vite
+[Vite-url]: https://vitejs.dev
+[mui.com]: https://img.shields.io/badge/MUI-3E7FFE?style=for-the-badge&logo=mui&logoColor=white
+[mui-url]: https://mui.com
