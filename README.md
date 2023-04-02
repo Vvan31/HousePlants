@@ -61,9 +61,12 @@
 
 
 <!-- ABOUT THE PROJECT -->
+
+
 ## About the project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/Vvan31/HousePlants/blob/main/HousePlants/src/assets/WhatsApp%20Image%202023-04-01%20at%2010.32.45%20PM.jpeg?raw=true)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/Vvan31/HousePlants/blob/main/HousePlants/src/assets/ss.jpeg)
+
 Developed using React and Material UI for a modern and user-friendly desig
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
