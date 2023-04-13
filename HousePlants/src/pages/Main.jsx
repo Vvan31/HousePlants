@@ -1,6 +1,8 @@
 import React from 'react'
 import { useEffect } from 'react';
 
+import './Main.css'
+
 
 import CreateCard from '@/pages/CreateCard'
 import Header from '@/components/Header'
@@ -10,6 +12,7 @@ import MyAccount from '@/pages/MyAccount'
 import Data from '@/data.json'
 
 import {Container, Box} from '@mui/material';
+
 
 const Main = 
 ({ 
@@ -87,8 +90,8 @@ const Main =
 
   return (
     <>
-      <Container sx={{ height: '100vh', width: '100vw', overflow:'hidden', padding:'0'}}> 
-        <Box sx={{ overflow:'hidden', padding:'0' }}>
+      <Container sx={{ height: '100vh', width: '100vw', overflow:'hidden', padding:'0', margin:'0'}}> 
+        <Box sx={{ overflow:'hidden', padding:'0', margin:'0', width:'100%' }}>
           <Header user={user} setUser={setUser} actualPage={actualPage} setActualPage={setActualPage} image={image} sx={{ width:'100%', padding:'0'}} />
           {renderSwitch()}
         </Box>

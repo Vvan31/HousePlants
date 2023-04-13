@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import Main from './pages/Main'
 import Login from './pages/Login'
 import { Container } from '@mui/material'
-// import './App.css'
+import './App.css'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -31,7 +31,7 @@ function App() {
 
   
   return user ? (
-    <Container sx={{width:'100vw', padding:'0', margin:'0'}}>
+    <Container sx={{width:'100vw !important', padding:'0', margin:'0'}}>
       <Main
         user={user}
         setUser={setUser}
@@ -48,7 +48,7 @@ function App() {
       />
     </Container>
   ): 
-  <Container sx={{width:'100vw'}}>
+  <Container sx={{width:'100vw', padding:'0', margin:'0'}}>
     <Login setUser={setUser} />
   </Container>
 }
