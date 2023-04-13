@@ -31,7 +31,14 @@ function App() {
 
   
   return user ? (
-    <Container sx={{width:'100vw !important', padding:'0', margin:'0'}}>
+    <Container 
+    
+      maxWidth='false' 
+      sx={{
+        width:'100vw !important', 
+        padding:'0', 
+        margin:'0'}}
+        disableGutters={true} >
       <Main
         user={user}
         setUser={setUser}

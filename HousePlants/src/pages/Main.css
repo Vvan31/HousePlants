@@ -8,21 +8,17 @@
     align-items: center;
     justify-content: center;
   }
-
+/* 
   @media (min-width: 1200px){
     .css-5dktby-MuiContainer-root, .css-15g1x5b-MuiContainer-root{
         max-width: 100% !important;
         left: 0;
     }
-    
-    /* .css-15g1x5b-MuiContainer-root{
-        max-width: 100% !important;
-        left: 0;
-    } */
+
   }
   @media (min-width: 600px){
     .css-5dktby-MuiContainer-root, .css-15g1x5b-MuiContainer-root {
         padding: 0 !important;
         margin: 0 !important;
     }
-  }
+  } */

@@ -90,8 +90,16 @@ const Main =
 
   return (
     <>
-      <Container sx={{ height: '100vh', width: '100vw', overflow:'hidden', padding:'0', margin:'0'}}> 
-        <Box sx={{ overflow:'hidden', padding:'0', margin:'0', width:'100%' }}>
+      <Container 
+        disableGutters={true}
+        maxWidth='false' 
+        sx={{ 
+          height: '100vh', 
+          width: '100vw', 
+          overflow:'hidden', 
+          padding:'0', 
+          margin:'0'}}> 
+        <Box maxWidth='false' sx={{ overflow:'hidden', padding:'0', margin:'0', width:'100%' }}>
           <Header user={user} setUser={setUser} actualPage={actualPage} setActualPage={setActualPage} image={image} sx={{ width:'100%', padding:'0'}} />
           {renderSwitch()}
         </Box>
