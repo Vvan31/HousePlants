@@ -18,7 +18,7 @@ import {
 
  import {AddPhotoAlternateIcon} from "@mui/icons-material/AddPhotoAlternate";
 
-import { COLORS, FONTS } from "../constants";
+
 
 const MyAccount = ({user, image, handleSetImage}) => {
     /* const imageUrls = [
@@ -73,8 +73,8 @@ const MyAccount = ({user, image, handleSetImage}) => {
                     }}>
                         <Typography sx={{
                             fontSize: '3rem',
-                            color: COLORS.background_green,
-                            fontFamily: FONTS.primary,
+                  /*           color: COLORS.background_green, */
+                           /*  fontFamily: FONTS.primary, */
                             fontWeight: 'bold',
                             }}
                         >{user}</Typography> 

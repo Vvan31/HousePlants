@@ -4,7 +4,7 @@ import AccountMenu from '@/components/AccountMenu';
 import { AppBar, Avatar, Toolbar, Typography, IconButton, Menu, MenuItem, Button, Box, Container, Tooltip, useRadioGroup } from '@mui/material';
 import { Menu as MenuIcon, Adb as AdbIcon } from '@mui/icons-material';
 
-import {COLORS, FONTS} from '../constants';
+/* import {COLORS, FONTS} from '../constants'; */
 
 const pages = ['Add New'];
 

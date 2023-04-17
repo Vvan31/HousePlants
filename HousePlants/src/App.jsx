@@ -32,7 +32,6 @@ function App() {
   
   return user ? (
     <Container 
-    
       maxWidth='false' 
       sx={{
         width:'100vw !important', 
@@ -55,7 +54,7 @@ function App() {
       />
     </Container>
   ): 
-  <Container sx={{width:'100vw', padding:'0', margin:'0'}}>
+  <Container disableGutters={true} maxWidth='xs'>
     <Login setUser={setUser} />
   </Container>
 }
