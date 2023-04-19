@@ -1,10 +1,8 @@
 import React from 'react';
-import AccountMenu from '@/components/AccountMenu';
+import AccountMenu from '@/components/Header/AccountMenu';
 
 import { AppBar, Avatar, Toolbar, Typography, IconButton, Menu, MenuItem, Button, Box, Container, Tooltip, useRadioGroup } from '@mui/material';
 import { Menu as MenuIcon, Adb as AdbIcon } from '@mui/icons-material';
-
-/* import {COLORS, FONTS} from '../constants'; */
 
 const pages = ['Add New'];
 

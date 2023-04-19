@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { Box, ImageList } from '@mui/material';
-import Post from '@/components/Post'
+import Post from '@/components/Post/Post'
 
 const PostList = 
 ({posts, 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PostList from '@/components/PostList';
+/* import PostList from '@/components/PostList'; */
 
 import { Box } from '@mui/material';
 

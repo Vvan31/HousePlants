@@ -4,12 +4,12 @@ import { useEffect } from 'react';
 import './Main.css'
 
 
-import CreateCard from '@/pages/CreateCard'
-import Header from '@/components/Header'
-import PostList from '@/components/PostList'
-import MyPlants from '@/pages/MyPlants'
-import MyAccount from '@/pages/MyAccount'
-import Data from '@/data.json'
+import CreateCard from '@/pages/Home/CreateCard'
+import Header from '@/components/Header/Header'
+import PostList from '@/components/Post/PostList'
+import MyPlants from '@/pages/Home/MyPlants'
+import MyAccount from '@/pages/Home/MyAccount'
+import Data from '@/data/data.json'
 
 import {Container, Box} from '@mui/material';
 

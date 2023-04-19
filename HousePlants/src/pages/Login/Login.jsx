@@ -5,7 +5,7 @@ import { Container, Typography, TextField, Button, Box, List, ListItem } from '@
 import './Login.css'
 import shadow from '@/assets/shadow.png'
 
-import About from '@/components/About.jsx'
+import About from '@/components/About/About.jsx'
 
 const Login = ({ setUser }) => {
     const [username, setUsername] = useState('')

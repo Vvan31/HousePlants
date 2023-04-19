@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import Main from './pages/Main'
-import Login from './pages/Login'
+import reactLogo from '@/assets/react.svg'
+import Main from '@/pages/Home/Main'
+import Login from '@/pages/Login/Login'
 import { Container } from '@mui/material'
-import './App.css'
+import '@/App.css'
 
 function App() {
   const [user, setUser] = useState(null)
