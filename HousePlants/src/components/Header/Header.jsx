@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import AccountMenu from '@/components/Header/AccountMenu';
 
 import { AppBar, Avatar, Toolbar, Typography, IconButton, Menu, MenuItem, Button, Box, Container, Tooltip, useRadioGroup } from '@mui/material';
@@ -6,27 +8,23 @@ import { Menu as MenuIcon, Adb as AdbIcon } from '@mui/icons-material';
 
 const pages = ['Add New'];
 
-const Header = ({ user, setUser, actualPage, setActualPage, image }) =>{
+const Header = () =>{
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
   
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
-    };
-  
+
     const handleCloseNavMenu = (e) => {
         switch (e.target.innerText) {
             case 'MY PLANTS':
-                setActualPage('My Plants');
+                navidate('/myplants');
                 break;
             case 'ADD NEW':
-                setActualPage('Add New');
+                navidate('/addnew');
                 break;
             case 'LOG OUT':
-                setUser(null);
+                navidate('/');
                 break;
             default:
                 break;
@@ -43,7 +41,7 @@ const Header = ({ user, setUser, actualPage, setActualPage, image }) =>{
                         variant="h6"
                         noWrap
                         component="button"
-                        onClick={() => setActualPage('My Plants')}
+                        onClick={() => navidate('/myplants')}
                         sx={{
                         mr: 2,
                         display: { xs: 'none', md: 'flex' },
@@ -55,7 +53,7 @@ const Header = ({ user, setUser, actualPage, setActualPage, image }) =>{
                         textDecoration: 'none',
                         }}
                     >
-                        {user}'s Plants
+                        My Plants
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -112,7 +110,7 @@ const Header = ({ user, setUser, actualPage, setActualPage, image }) =>{
                         textDecoration: 'none',
                         }}
                     >
-                       {user}'s Plants
+                       My Plants
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (

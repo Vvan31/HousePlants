@@ -1,19 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { Container, Typography, TextField, Button, Box, List, ListItem } from '@mui/material'
+import { Container, Typography, TextField, Button, List, ListItem } from '@mui/material'
 
 import './Login.css'
 import shadow from '@/assets/shadow.png'
 
 import About from '@/components/About/About.jsx'
 
-const Login = ({ setUser }) => {
+//Data 
+const Login = () => {
     const [username, setUsername] = useState('')
     const [hover, setHover] = useState(false)
 
+    const navigate = useNavigate()
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        setUser(username)
+        navigate('/home')
     }
 
     const handleInput = () => {

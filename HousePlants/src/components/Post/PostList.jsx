@@ -19,7 +19,7 @@ const PostList =
 
     return (
       <>
-        <ImageList sx={{ width: '100%', height: '85%', overflowY:'scroll'}} gap={2} cols={3} rowHeight={174}> 
+        <ImageList sx={{ width: '100%', height: '85%', overflowY:'scroll'}} gap={2} cols={3} /* rowHeight={174} */> 
         {arrayToRender.map((post, index) => (
             <Post key={index} post={post} userPosts={userPosts} handleAddUserPost={handleAddUserPost} setUserPosts={setUserPosts} actualPage={actualPage}/>
          ))}
