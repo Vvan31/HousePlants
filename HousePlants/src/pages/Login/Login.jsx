@@ -17,7 +17,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        navigate('/home')
+        navigate('/myplants')
     }
 
     const handleInput = () => {

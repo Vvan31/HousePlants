@@ -76,8 +76,8 @@ const Main = () => {
           padding:'0', 
           margin:'0'}}> 
         <Box maxWidth='false' sx={{ overflow:'hidden', padding:'0', margin:'0', width:'100%' }}>
-          <Header user={user} setUser={setUser} actualPage={actualPage} setActualPage={setActualPage} image={image} sx={{ width:'100%', padding:'0'}} />
-          {renderSwitch()}
+          <Header sx={{ width:'100%', padding:'0'}} />
+          {/* {renderSwitch()} */}
         </Box>
       </Container>
     </>

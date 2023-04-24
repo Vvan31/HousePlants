@@ -11,6 +11,9 @@ const pages = ['Add New'];
 const Header = () =>{
     const [anchorElNav, setAnchorElNav] = React.useState(null);
   
+
+    const navigate = useNavigate();
+    
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
     };
@@ -21,7 +24,7 @@ const Header = () =>{
                 navidate('/myplants');
                 break;
             case 'ADD NEW':
-                navidate('/addnew');
+                navigate('/addnew');
                 break;
             case 'LOG OUT':
                 navidate('/');
@@ -41,7 +44,7 @@ const Header = () =>{
                         variant="h6"
                         noWrap
                         component="button"
-                        onClick={() => navidate('/myplants')}
+                        onClick={() => navigate('/myplants')}
                         sx={{
                         mr: 2,
                         display: { xs: 'none', md: 'flex' },
@@ -126,7 +129,7 @@ const Header = () =>{
 
                     <Box sx={{ flexGrow: 0 }}>
                         {/* <Avatar alt="R" src="/src/assets/viviana.png" /> */}
-                            <AccountMenu user={user} setUser={setUser} setActualPage={setActualPage} image={image} />
+                            <AccountMenu user={'User'} />
                     </Box>
                 </Toolbar>
             </Container> 
