@@ -1,11 +1,10 @@
-
+/* 
 import * as data from '@/data/data.json';
 import { applyMiddleware, legacy_createStore as createStore } from 'redux';
 import thunk from 'redux-thunk';
 import {configKeys} from '@/config/index.js';
 
 // import a store 
-/* const { createStore } = Redux */
 
 // initial state
 
@@ -103,4 +102,5 @@ export const searchPlant = (search) => async() => {
     id: 1,
     name: 'Aloe Vera',
   }
-}) */
+}) 
+ */
