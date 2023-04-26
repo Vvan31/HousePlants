@@ -6,12 +6,12 @@ import AccountMenu from '@/components/Header/AccountMenu';
 import { AppBar, Avatar, Toolbar, Typography, IconButton, Menu, MenuItem, Button, Box, Container, Tooltip, useRadioGroup } from '@mui/material';
 import { Menu as MenuIcon, Adb as AdbIcon } from '@mui/icons-material';
 
+import './Header.css'
 const pages = ['Add New'];
 
 const Header = () =>{
     const [anchorElNav, setAnchorElNav] = React.useState(null);
   
-
     const navigate = useNavigate();
     
     const handleOpenNavMenu = (event) => {
@@ -36,7 +36,7 @@ const Header = () =>{
     };
 
     return (
-        <AppBar sx={{padding:'0' , top:'0'}}>
+        <AppBar sx={{padding:'0' , top:'0'}} className='searchbar'>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -48,15 +48,33 @@ const Header = () =>{
                         sx={{
                         mr: 2,
                         display: { xs: 'none', md: 'flex' },
-                        fontFamily: 'monospace',
                         fontWeight: 700,
                         backgroundColor: 'transparent',
                         letterSpacing: '.3rem',
                         color: 'inherit',
                         textDecoration: 'none',
                         }}
+                        className='title'
                     >
                         My Plants
+                    </Typography>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="button"
+                        onClick={() => navigate('/addnew')}
+                        sx={{
+                        mr: 2,
+                        display: { xs: 'none', md: 'flex' },
+                        fontWeight: 700,
+                        backgroundColor: 'transparent',
+                        letterSpacing: '.3rem',
+                        color: 'inherit',
+                        textDecoration: 'none',
+                        }}
+                        className='title'
+                    >
+                        Add new plant
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -90,7 +108,10 @@ const Header = () =>{
                         >
                         {pages.map((page) => (
                             <MenuItem key={page} onClick={handleCloseNavMenu}>
-                            <Typography textAlign="center">{page}</Typography>
+                            <Typography 
+                            textAlign="center" 
+                            onClick={() => navigate((`/${page.toLowerCase().replace(/\s/g, (""))}`))}
+                            >{page}</Typography>
                             </MenuItem>
                         ))}
                         </Menu>
@@ -98,6 +119,7 @@ const Header = () =>{
                     
                     <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
+                        onClick={() => navigate('/myplants')}
                         variant="h5"
                         noWrap
                         component="a"
@@ -115,21 +137,8 @@ const Header = () =>{
                     >
                        My Plants
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                        <Button
-                            key={page}
-                            onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: 'white', display: 'block' }}
-                        >
-                            {page}
-                        </Button>
-                        ))}
-                    </Box>
-
                     <Box sx={{ flexGrow: 0 }}>
-                        {/* <Avatar alt="R" src="/src/assets/viviana.png" /> */}
-                            <AccountMenu user={'User'} />
+                        <AccountMenu user={'User'} />
                     </Box>
                 </Toolbar>
             </Container> 

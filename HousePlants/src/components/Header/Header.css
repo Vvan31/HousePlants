@@ -1,0 +1,37 @@
+:root {
+    color: #3b3d3e;
+    background-color: #f2e8cf;
+  }
+  a:hover {
+    color: #386641;
+  }
+  button {
+    background-color: #f2e8cf;
+  }
+
+  .searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    background-color: #386641 !important;
+    border-radius: 0;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+
+  .title{
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: bolder !important;
+    border: 0;
+    transition: all 0.2s ease-in-out !important;
+  }
+  .title:hover{
+    color: #ffc914 !important;
+    transform: scale(1.3);
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+    transition: all 0.3s ease-in-out !important;
+  }

@@ -6,19 +6,12 @@ import {
     ListItem,
     Avatar,
     Typography,
-    Button,
-    Box,
-    TextField,
-    IconButton,
-    Input,
-    InputLabel,
-    FormControl,
     Fab
  } from "@mui/material";
 
  import {AddPhotoAlternateIcon} from "@mui/icons-material/AddPhotoAlternate";
 
-
+import  Header  from '@/components/Header/Header'; 
 
 const MyAccount = ({user, image, handleSetImage}) => {
     /* const imageUrls = [
@@ -42,71 +35,74 @@ const MyAccount = ({user, image, handleSetImage}) => {
     }
 
     return (
-        <Container fixed sx={{ 
-            height: '100vh',
-            width: '100vw',
-            display: 'flex', 
-            justifyContent: 'center', 
-            alignItems: 'center',
-         }} 
-        >
-            <List>
-                <form onSubmit={handleSubmit}>
-                    {/* Avatar */}
-                    <ListItem sx={{
-                        display: 'flex', 
-                        justifyContent: 'center', 
-                        alignItems: 'center'
-                    }}>
-                        <Avatar
-                            alt="Remy Sharp"
-                            src={image}
-                            sx={{ width: 56, height: 56 }}
-                            />
-                    </ListItem>
+        <>
+            <Header />
+            <Container fixed sx={{ 
+                height: '100vh',
+                width: '100vw',
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center',
+            }} 
+            >
+                <List>
+                    <form onSubmit={handleSubmit}>
+                        {/* Avatar */}
+                        <ListItem sx={{
+                            display: 'flex', 
+                            justifyContent: 'center', 
+                            alignItems: 'center'
+                        }}>
+                            <Avatar
+                                alt="Remy Sharp"
+                                src={image}
+                                sx={{ width: 56, height: 56 }}
+                                />
+                        </ListItem>
 
-                    {/*User name */}
-                    <ListItem sx={{
-                        display: 'flex', 
-                        justifyContent: 'center', 
-                        alignItems: 'center'
-                    }}>
-                        <Typography sx={{
-                            fontSize: '3rem',
-                  /*           color: COLORS.background_green, */
-                           /*  fontFamily: FONTS.primary, */
-                            fontWeight: 'bold',
-                            }}
-                        >{user}</Typography> 
-                    </ListItem>
-                    {/* Choose new avatar */}
-                    <ListItem sx={{
-                        display: 'flex', 
-                        justifyContent: 'center', 
-                        alignItems: 'center'
-                    }}>
-                    <Fab aria-label="add" onClick={()=> handleSetImage(imageUrls[0])}>
-                        <Avatar alt="ARemy Sharp" src={imageUrls[0]} />
-                    </Fab>
-                    <Fab aria-label="add" onClick={()=> handleSetImage(imageUrls[1])}>
-                        <Avatar alt="ARemy Sharp" src={imageUrls[1]} />
-                    </Fab>
-                    <Fab aria-label="add" onClick={()=> handleSetImage(imageUrls[2])}>
-                        <Avatar alt="ARemy Sharp" src={imageUrls[2]} />
-                    </Fab>
-                    <Fab aria-label="add" onClick={()=> handleSetImage(imageUrls[3])}>
-                        <Avatar alt="ARemy Sharp" src={imageUrls[3]} />
-                    </Fab>
-                    <Fab aria-label="add" onClick={()=> handleSetImage(imageUrls[4])}>
-                        <Avatar alt="ARemy Sharp" src={imageUrls[4]} />
-                    </Fab>
-               
+                        {/*User name */}
+                        <ListItem sx={{
+                            display: 'flex', 
+                            justifyContent: 'center', 
+                            alignItems: 'center'
+                        }}>
+                            <Typography sx={{
+                                fontSize: '3rem',
+                    /*           color: COLORS.background_green, */
+                            /*  fontFamily: FONTS.primary, */
+                                fontWeight: 'bold',
+                                }}
+                            >{user}</Typography> 
+                        </ListItem>
+                        {/* Choose new avatar */}
+                        <ListItem sx={{
+                            display: 'flex', 
+                            justifyContent: 'center', 
+                            alignItems: 'center'
+                        }}>
+                        <Fab aria-label="add" onClick={()=> handleSetImage(imageUrls[0])}>
+                            <Avatar alt="ARemy Sharp" src={imageUrls[0]} />
+                        </Fab>
+                        <Fab aria-label="add" onClick={()=> handleSetImage(imageUrls[1])}>
+                            <Avatar alt="ARemy Sharp" src={imageUrls[1]} />
+                        </Fab>
+                        <Fab aria-label="add" onClick={()=> handleSetImage(imageUrls[2])}>
+                            <Avatar alt="ARemy Sharp" src={imageUrls[2]} />
+                        </Fab>
+                        <Fab aria-label="add" onClick={()=> handleSetImage(imageUrls[3])}>
+                            <Avatar alt="ARemy Sharp" src={imageUrls[3]} />
+                        </Fab>
+                        <Fab aria-label="add" onClick={()=> handleSetImage(imageUrls[4])}>
+                            <Avatar alt="ARemy Sharp" src={imageUrls[4]} />
+                        </Fab>
+                
 
-                    </ListItem> 
-                </form>
-            </List>
+                        </ListItem> 
+                    </form>
+                </List>
 
-        </Container>
+            </Container>
+        </>
     );
     }
 export default MyAccount;

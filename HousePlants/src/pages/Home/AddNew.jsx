@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 
 //data
-/* import { store, addPlant,  searchPlant } from "@/data/redux.js"; */
-import { connect } from "react-redux";
-
 import { Box } from '@mui/material';
 
 //Components

@@ -1,12 +1,16 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import {
     Box, Avatar , Menu, MenuItem, ListItemIcon, IconButton, Tooltip
 } from '@mui/material';
+
 import Logout from '@mui/icons-material/Logout';
 
-const AccountMenu = ({user, setUser, setActualPage, image}) => {
+const AccountMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const navigate = useNavigate();
 
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -27,7 +31,7 @@ const AccountMenu = ({user, setUser, setActualPage, image}) => {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }} src={image}></Avatar>
+            <Avatar sx={{ width: 32, height: 32 }} src={""}></Avatar>
           </IconButton>
         </Tooltip>
       </Box>
@@ -67,11 +71,11 @@ const AccountMenu = ({user, setUser, setActualPage, image}) => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
     
-        <MenuItem onClick={() => setActualPage('My Account')}>
-          <Avatar src={image} /> My account
+        <MenuItem onClick={() =>  navigate('/myaccount')}>
+          <Avatar src={""} /> My account
         </MenuItem>
 
-        <MenuItem onClick={() => setUser(null)}>
+        <MenuItem onClick={() => navigate('/')}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

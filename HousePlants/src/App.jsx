@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Pages
 import Login from '@/pages/Login/Login'
-import Home from '@/pages/Home/Home'
 import  MyAccount  from '@/pages/Home/MyAccount'
 import  MyPlants from '@/pages/Home/MyPlants'
 import  AddNew  from '@/pages/Home/AddNew'
@@ -15,7 +14,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/home" element={<Home />} />
       <Route path="/myaccount" element={<MyAccount />} />
       <Route path="/myplants" element={<MyPlants />} />
       <Route path="/addnew" element={<AddNew />} />

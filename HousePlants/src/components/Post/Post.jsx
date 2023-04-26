@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useLocation } from 'react-router-dom'
 
 import {
   ImageListItem, 
@@ -16,7 +16,8 @@ import {
 import InfoIcon from '@mui/icons-material/Info';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
-const Post = ({post, userPosts, handleAddUserPost, setUserPosts, actualPage}) => {
+const Post = ({post, handleAddUserPost, actualPage}) => {
+  
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -43,7 +44,7 @@ const Post = ({post, userPosts, handleAddUserPost, setUserPosts, actualPage}) =>
 
   const renderSwitch = () => {
     switch (actualPage) {
-      case 'My Plants':
+      case 'MYPLANTS':
         return (
           <>
           <IconButton
@@ -98,7 +99,7 @@ const Post = ({post, userPosts, handleAddUserPost, setUserPosts, actualPage}) =>
             </>
         )
         break;
-      case 'Add New':
+      case 'ADDNEW':
         return (
           <>
            <IconButton
