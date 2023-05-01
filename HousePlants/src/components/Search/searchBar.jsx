@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
+import {configKeys} from '@/config/index.js';
+
 //Actions
-import { fetchPlantsSuccess } from '@/data/redux/actions';
+import { fetchPlantsSuccess,fetchPlantsRequest } from '@/data/redux/actions';
 
 import { 
     Box,
@@ -18,7 +20,9 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
-const SearchBar = ({ FetchPlant }) =>{
+import './searchbar.css'
+
+const SearchBar = ({ searchPlant }) =>{
     const [content, setContent] = React.useState('');
     const [loading, setLoading] = React.useState(false);
     const [alert, setAlert] = React.useState(false);
@@ -29,7 +33,7 @@ const SearchBar = ({ FetchPlant }) =>{
       console.log(content);
       if(content){
         setLoading(true);
-        FetchPlant(content);
+        searchPlant(content);
         setContent('');
         setLoading(false);
       }else{
@@ -52,7 +56,7 @@ const SearchBar = ({ FetchPlant }) =>{
             <Grid item xs={9}>
               <TextField 
                   id="outlined-basic" 
-                  label="Add Post Content" 
+                  label="Search a plant" 
                   variant="outlined" 
                   onChange={(e) => setContent(e.target.value)}
                   value={content}
@@ -60,6 +64,7 @@ const SearchBar = ({ FetchPlant }) =>{
             </Grid>
             <Grid item xs={3}>
               <Button 
+                className='button'
                 type="submit" 
                 variant="contained"
                 sx={{marginTop:'3px',height:'100%', width:'100%'}}>
@@ -80,8 +85,6 @@ const SearchBar = ({ FetchPlant }) =>{
             size="small"
             onClick={() => {
               setAlert(false);
-              setResult(null);
-              handleSearch(null);
             }}
           >
             <CloseIcon fontSize="inherit" />
@@ -100,16 +103,17 @@ const SearchBar = ({ FetchPlant }) =>{
 };
 
 const mapStateToProps = (state) => {
+  console.log("SearchBar: " + JSON.stringify(state.searchReducer.searchPlants));
   return {
-      searchPlants: state.searchPlants,
+      searchPlants: state.searchReducer.searchPlants,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      FetchPlant: (plant) => dispatch(fetchPlantsSuccess(plant)),
+      addPlant: (plant) => dispatch(addPlant(plant)),
+      searchPlant: (plant) => dispatch(fetchPlantsSuccess(plant)),
   };
 };
-
 
 export default connect(mapStateToProps,mapDispatchToProps)(SearchBar);

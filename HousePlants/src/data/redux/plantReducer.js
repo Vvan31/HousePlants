@@ -55,7 +55,7 @@ export const searchReducer = (state = initialState, action) => {
           return {
             ...state,
             loading: false,
-            searchPlants: action.payload,
+            searchPlants: action.payload.data,
             error: ''
           }
         case 'FETCH_PLANTS_FAILURE':
@@ -70,7 +70,9 @@ export const searchReducer = (state = initialState, action) => {
         }
 }
 
-export default combineReducers({
+export const root = combineReducers({
     plantReducer,
     searchReducer
-  })
+})
+
+
