@@ -25,13 +25,13 @@ const AccountMenu = () => {
         <Tooltip title="Account settings">
           <IconButton
             onClick={handleClick}
-            size="small"
+            size="large"
             sx={{ ml: 2 }}
             aria-controls={open ? 'account-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }} src={""}></Avatar>
+            <Avatar sx={{ width: 47, height: 47 }} src={""}></Avatar>
           </IconButton>
         </Tooltip>
       </Box>

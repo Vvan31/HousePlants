@@ -10,10 +10,11 @@
   }
 
   .searchbar {
+    position: fixed;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    align-items: center;  
+    justify-content: space-around !important;
+    width: 100vw;
     height: 10%;
     background-color: #386641 !important;
     border-radius: 0;
@@ -34,4 +35,12 @@
    /*  margin-left: 5% !important;
     margin-right: 5% !important; */
     transition: all 0.3s ease-in-out !important;
+  }
+
+  .menu{
+    position: fixed !important;
+    right: 5% !important;
+  }
+  .usericon{
+    width: max-content;
   }

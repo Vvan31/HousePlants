@@ -14,55 +14,31 @@ export const removePlant = (plantId) => {
     }
 }
 
-/* export const addPlantImage = (plant) => {
-    return {
-        type: 'ADD_PLANT_IMAGE',
-        payload: plant
-    }
-} */
-
 export const fetchPlantsRequest = () => {
     return {
         type: 'FETCH_PLANTS_REQUEST'
     }
 }
 
-export const fetchPlantsSuccess = (search) => async() => {
-  try{
-    const APIresult = await fetch('https://perenual.com/api/species-list?key='+ configKeys.Key +'&q='+ search)
-    APIresult.json().then(json => {
-      console.log('API fetch with search of:  ' + search )
-      console.log(json)
-      return{ 
-        type: 'FETCH_PLANTS_SUCCESS',
-        payload: json
-      }
-    })
-  } catch (error) {
-    console.log(error)
-    return {
-      type: 'FETCH_PLANTS_FAILURE',
-      payload: error
-    }
-  }
-    /* try{
-        dispatch(fetchPlantsRequest())
-        const APIresult = await fetch('https://perenual.com/api/species-list?key='+ configKeys.Key +'&q='+ search)
-        APIresult.json().then(json => {
+export const fetchPlantsSuccess = (search) => {
+  return async (dispatch) => {
+      dispatch(fetchPlantsRequest())
+      try {
+          const APIresult = await fetch('https://perenual.com/api/species-list?key='+ configKeys.Key +'&q='+ search)
+          const json = await APIresult.json()
+          console.log('API fetch with search of:  ' + search)
           console.log(json)
-          dispatch({ 
-            type: 'FETCH_PLANTS_SUCCESS',
-            payload: json
+          dispatch({
+              type: 'FETCH_PLANTS_SUCCESS',
+              payload: json
           })
-        })
       } catch (error) {
-        console.log(error)
-        return {
-          type: 'FETCH_PLANTS_FAILURE',
-          payload: error
-        }
-      } */
-    }
-    
-
+          console.log(error)
+          dispatch({
+              type: 'FETCH_PLANTS_FAILURE',
+              payload: error
+          })
+      }
+  }
+}
 

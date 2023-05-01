@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom'
 //Actions 
 import { addPlant, fetchPlantsSuccess } from '@/data/redux/actions';
 
-import { Box, ImageList } from '@mui/material';
+import { ImageList } from '@mui/material';
 
 import Post from '@/components/Post/Post'
 
@@ -18,13 +18,10 @@ const PostList = ({searchPlants, plants, addPlant}) =>{
     (actualPage === 'MYPLANTS')
     ? setPosts(plants)
     :setPosts(searchPlants);
-    console.log("Change on plants: " + JSON.stringify(searchPlants) + " " + JSON.stringify(plants));
-
   }, [searchPlants, plants]);
  
   const handleAddUserPost = (post) => { 
     addPlant(post);
-    //console.log("added: " + JSON.stringify(post) + " to user's plants");
   };
 
     if (!posts || posts.length === 0) {
@@ -45,8 +42,8 @@ const PostList = ({searchPlants, plants, addPlant}) =>{
 
 const mapStateToProps = (state) => {
   return {
-      searchPlants: state.searchPlants,
-      plants: state.userPlants,
+    searchPlants: state.searchReducer.searchPlants,
+    plants: state.plantReducer.userPlants,
   };
 };
 

@@ -6,14 +6,17 @@ import { Box } from '@mui/material';
 
 import Header from '@/components/Header/Header';
 
+import './Myplants.css'
+
 const MyPlants = () =>{
     return (
         <>
         <Header />
-        <h1>My plants</h1>
-        <Box sx={{ marginTop:'5%', height: '90vh', width: '100%' }}>
-            <PostList />
-        </Box>
+        <div className='mp_main'>
+            <Box sx={{ marginTop:'0%', height: '95vh', width: '99vw' }}>
+                <PostList />
+            </Box>
+        </div>
         </>
     )
 };

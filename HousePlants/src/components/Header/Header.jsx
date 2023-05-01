@@ -21,13 +21,13 @@ const Header = () =>{
     const handleCloseNavMenu = (e) => {
         switch (e.target.innerText) {
             case 'MY PLANTS':
-                navidate('/myplants');
+                navigate('/myplants');
                 break;
             case 'ADD NEW':
                 navigate('/addnew');
                 break;
             case 'LOG OUT':
-                navidate('/');
+                navigate('/');
                 break;
             default:
                 break;
@@ -76,47 +76,47 @@ const Header = () =>{
                     >
                         Add new plant
                     </Typography>
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        onClick={handleOpenNavMenu}
-                        color="inherit"
-                        >
-                        <MenuIcon />
-                        </IconButton>
-                        <Menu
-                        id="menu-appbar"
-                        anchorEl={anchorElNav}
-                        anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'left',
-                        }}
-                        keepMounted
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'left',
-                        }}
-                        open={Boolean(anchorElNav)}
-                        onClose={handleCloseNavMenu}
-                        sx={{
-                            display: { xs: 'block', md: 'none' },
-                        }}
-                        >
-                        {pages.map((page) => (
-                            <MenuItem key={page} onClick={handleCloseNavMenu}>
-                            <Typography 
-                            textAlign="center" 
-                            onClick={() => navigate((`/${page.toLowerCase().replace(/\s/g, (""))}`))}
-                            >{page}</Typography>
-                            </MenuItem>
-                        ))}
-                        </Menu>
-                    </Box>
-                    
+                    {/* Hamburger menu */}
+                        <Box  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                            <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleOpenNavMenu}
+                            color="inherit"
+                            >
+                            <MenuIcon />
+                            </IconButton>
+                            <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorElNav}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'left',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'left',
+                            }}
+                            open={Boolean(anchorElNav)}
+                            onClose={handleCloseNavMenu}
+                            sx={{
+                                display: { xs: 'block', md: 'none' },
+                            }}
+                            >
+                            {pages.map((page) => (
+                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                <Typography 
+                                textAlign="center" 
+                                onClick={() => navigate((`/${page.toLowerCase().replace(/\s/g, (""))}`))}
+                                >{page}</Typography>
+                                </MenuItem>
+                            ))}
+                            </Menu>
+                        </Box>
+               
                     <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
                         onClick={() => navigate('/myplants')}
@@ -137,8 +137,9 @@ const Header = () =>{
                     >
                        My Plants
                     </Typography>
-                    <Box sx={{ flexGrow: 0 }}>
-                        <AccountMenu user={'User'} />
+
+                    <Box className="menu" sx={{ flexGrow: 1, right: 0 }}>
+                        <AccountMenu user={'User'} className="usericon" />
                     </Box>
                 </Toolbar>
             </Container> 

@@ -95,8 +95,6 @@ const MyAccount = ({user, image, handleSetImage}) => {
                         <Fab aria-label="add" onClick={()=> handleSetImage(imageUrls[4])}>
                             <Avatar alt="ARemy Sharp" src={imageUrls[4]} />
                         </Fab>
-                
-
                         </ListItem> 
                     </form>
                 </List>
