@@ -1,0 +1,9 @@
+{
+    "rewrites":[
+        { "source" : "/", "destination" : "/"},
+        { "source" : "/myaccount", "destination" : "/myaccount"},
+        { "source" : "/myplants", "destination" : "/myplants"},
+        { "source" : "/addnew", "destination" : "/addnew"}
+    ]
+
+}
