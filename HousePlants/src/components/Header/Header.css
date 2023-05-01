@@ -29,9 +29,9 @@
     transition: all 0.2s ease-in-out !important;
   }
   .title:hover{
-    color: #ffc914 !important;
-    transform: scale(1.3);
-    margin-left: 5% !important;
-    margin-right: 5% !important;
+    color: #ff3b14 ;
+    transform: scale(1.1);
+   /*  margin-left: 5% !important;
+    margin-right: 5% !important; */
     transition: all 0.3s ease-in-out !important;
   }

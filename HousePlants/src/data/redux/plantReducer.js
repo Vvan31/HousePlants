@@ -1,5 +1,6 @@
 
 import * as data from '@/data/data.json';
+import { combineReducers } from 'redux';
 
 const initialState = {
     userPlants: [],
@@ -68,3 +69,8 @@ export const searchReducer = (state = initialState, action) => {
             return state
         }
 }
+
+export default combineReducers({
+    plantReducer,
+    searchReducer
+  })

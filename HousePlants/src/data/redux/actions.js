@@ -28,7 +28,24 @@ export const fetchPlantsRequest = () => {
 }
 
 export const fetchPlantsSuccess = (search) => async() => {
-    try{
+  try{
+    const APIresult = await fetch('https://perenual.com/api/species-list?key='+ configKeys.Key +'&q='+ search)
+    APIresult.json().then(json => {
+      console.log('API fetch with search of:  ' + search )
+      console.log(json)
+      return{ 
+        type: 'FETCH_PLANTS_SUCCESS',
+        payload: json
+      }
+    })
+  } catch (error) {
+    console.log(error)
+    return {
+      type: 'FETCH_PLANTS_FAILURE',
+      payload: error
+    }
+  }
+    /* try{
         dispatch(fetchPlantsRequest())
         const APIresult = await fetch('https://perenual.com/api/species-list?key='+ configKeys.Key +'&q='+ search)
         APIresult.json().then(json => {
@@ -44,7 +61,7 @@ export const fetchPlantsSuccess = (search) => async() => {
           type: 'FETCH_PLANTS_FAILURE',
           payload: error
         }
-      }
+      } */
     }
     
 

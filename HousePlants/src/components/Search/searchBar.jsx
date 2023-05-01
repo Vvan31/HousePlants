@@ -1,4 +1,8 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+
+//Actions
+import { fetchPlantsSuccess } from '@/data/redux/actions';
 
 import { 
     Box,
@@ -14,7 +18,7 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
-const SearchBar = () =>{
+const SearchBar = ({ FetchPlant }) =>{
     const [content, setContent] = React.useState('');
     const [loading, setLoading] = React.useState(false);
     const [alert, setAlert] = React.useState(false);
@@ -23,15 +27,17 @@ const SearchBar = () =>{
       e.preventDefault();
       console.log('submit');
       console.log(content);
-    /*   if(!content){
-        handleSearch(null);
-      }else{
+      if(content){
         setLoading(true);
-        fetchData();
+        FetchPlant(content);
         setContent('');
         setLoading(false);
-      } */
-    }
+      }else{
+        console.log('error');
+        setAlert(true);
+      }
+    };
+
 
     return (
         <>
@@ -93,4 +99,17 @@ const SearchBar = () =>{
     )
 };
 
-export default SearchBar;
+const mapStateToProps = (state) => {
+  return {
+      searchPlants: state.searchPlants,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+      FetchPlant: (plant) => dispatch(fetchPlantsSuccess(plant)),
+  };
+};
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(SearchBar);
