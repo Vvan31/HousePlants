@@ -20,7 +20,7 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
-import './searchBar.css'
+import './searchbar.css'
 
 const SearchBar = ({ searchPlant }) =>{
     const [content, setContent] = React.useState('');
