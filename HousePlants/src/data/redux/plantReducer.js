@@ -12,7 +12,7 @@ export const plantReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_PLANT':
             /* console.log("added: " + JSON.stringify(action.payload) + " to user's plants"); */
-            console.log("userPlants: " + JSON.stringify(state.userPlants));
+            // console.log("userPlants: " + JSON.stringify(state.userPlants));
             return {
                 ...state,
                 userPlants: [...state.userPlants, action.payload],
